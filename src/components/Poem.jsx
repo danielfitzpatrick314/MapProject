@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'; // So it doesn't create a unnecessary n
 
 export const Poem = () => (
     <Fragment>
-<h4>&ldquo;Project by Lane Smith&rdquo;</h4>
+<h4>&ldquo;Wyll and Testament&rdquo;</h4>
 <p>By Isabella Whitney<br />
 The time is come I must departe<br />
 from thee, ah, famous Citie:<br />
