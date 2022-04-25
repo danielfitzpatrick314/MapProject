@@ -13,7 +13,6 @@ class Map extends Component{
                 scale: 0.170177,
                 translation: { x: -2.4473, y: 206.816 }
             }
-            // translate(-2.44737px, 206.816px) scale(0.170177)
         }
     }
 
