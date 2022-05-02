@@ -5,9 +5,9 @@
 html, body{
   height: 100%;
 }
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 
 
@@ -44,3 +44,32 @@ mark {
   /* background-color: red; */
   height: 70vh;
 }
+
+.p-heading {
+  font-family: "canada-type-gibson";
+  font-weight: bold;
+  font-size: 1.75rem;
+}
+
+.p-c-txt {
+  font-family: "canada-type-gibson";
+  text-transform: uppercase;
+}
+  .o-poem {
+    font-family: "canada-type-gibson";
+    
+  }
+
+ .p-line {
+  text-indent: -1em;
+  padding-left: 1em;
+  font-size: 1.15rem
+ }
+
+ .p-footer{
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+ }

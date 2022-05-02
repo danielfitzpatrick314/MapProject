@@ -36,9 +36,9 @@ class Map extends Component{
         element.classList.add('highlight');
     }
 
-    handleChangeLocationOnWordClick = (tagClass) => {
-        this.handleSetMapImage(tagClass);
-    }
+    // handleChangeLocationOnWordClick = (tagClass) => {
+    //     this.handleSetMapImage(tagClass);
+    // }
 
     render(){
         // console.log( this.state.value )
@@ -47,10 +47,7 @@ class Map extends Component{
         return (
             <Container fluid>
                 <Row>
-                    
-                </Row>
-                <Row>
-                    <Col className='col-sm-7 col-2 fixed-top one'>
+                    <Col className='col-sm-8 col-4 fixed-top one'>
                         <Button variant="primary" onClick={() => this.handleMakeChange('birchin-lane')}>Birchin Lane</Button>
                         <Button variant="primary" onClick={() => this.handleMakeChange('cheapeside-market')}>Cheapside Market</Button>
                         <Button variant="primary" onClick={() => this.handleMakeChange('fleete-street')}>Fleet Street</Button>
@@ -75,9 +72,9 @@ class Map extends Component{
                             </MapInteractionCSS>
                         </div>
                     </Col>
-                    <Col md="auto" className='col-sm-5 offset-sm-7 two'>
+                    <Col md="auto" className='col-sm-4 offset-sm-8 two'>
                         <Poem 
-                            handleChangeLocationOnWordClick={this.handleChangeLocationOnWordClick}
+                            handleChangeLocationOnWordClick={this.handleMakeChange}
                         />
                     </Col>
                 </Row>
