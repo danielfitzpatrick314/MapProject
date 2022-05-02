@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { MapInteractionCSS , MapInteraction} from 'react-map-interaction';
 import { Container, Row, Col, Button, Image } from 'react-bootstrap';
 import {Poem} from './Poem'
+import Footer from './Footer';
 
 class Map extends Component{
 
@@ -10,14 +11,22 @@ class Map extends Component{
         this.state = {
             img : './images/map.jpeg',
             value: {
-                scale: 0.170177,
-                translation: { x: -2.4473, y: 206.816 }
+                // scale: 0.170177,
+                // translation: { x: -2.4473, y: 206.816 }
+                scale: 0.159416,
+                translation: {x: 20.1353, y: 96.2819 }
             }
         }
     }
 
-    handleMakeChange = (tagClass) => {
+
+    handleSetMapImage = (tagClass) => {
         this.setState({ img: tagClass  })
+    }
+
+
+    handleMakeChange = (tagClass) => {
+        this.handleSetMapImage(tagClass);
         const element = document.querySelector(`.${tagClass}`)
         element.scrollIntoView({ behavior: 'smooth'});
         const checkOlder  = document.querySelector(`.highlight`);
@@ -27,6 +36,10 @@ class Map extends Component{
         element.classList.add('highlight');
     }
 
+    handleChangeLocationOnWordClick = (tagClass) => {
+        this.handleSetMapImage(tagClass);
+    }
+
     render(){
         // console.log( this.state.value )
         const { img } = this.state
@@ -34,33 +47,41 @@ class Map extends Component{
         return (
             <Container fluid>
                 <Row>
+                    
+                </Row>
+                <Row>
                     <Col className='col-sm-7 col-2 fixed-top one'>
                         <Button variant="primary" onClick={() => this.handleMakeChange('birchin-lane')}>Birchin Lane</Button>
                         <Button variant="primary" onClick={() => this.handleMakeChange('cheapeside-market')}>Cheapside Market</Button>
                         <Button variant="primary" onClick={() => this.handleMakeChange('fleete-street')}>Fleet Street</Button>
                         <Button variant="primary" onClick={() => this.handleMakeChange('fleete-prison')}>Fleet Prison</Button>
                         <Button variant="primary" onClick={() => this.handleMakeChange('temple-bar')}>Temple Bar</Button>
-                        <MapInteractionCSS
-                            value={this.state.value}
-                            onChange={(value) => this.setState({ value })}
-                            showControls={true}
-                        >
-                            {/* {img === 'birchin-lane' && <Image src={`./images/${img}.png`} />}
-                            {img === 'cheapeside-market' && <Image src={`./images/${img}.png`} />}
-                            {img === 'fleete-street' && <Image src={`./images/${img}.png`} />}
-                            {img === 'fleete-prison' && <Image src={`./images/${img}.png`} />}
-                            {img === 'temple-bar' && <Image src={`./images/${img}.png`} />} */}
-                            { !checkImages.includes(img) 
-                                ?  <Image src={img} />
-                                :  <Image src={`./images/${img}.jpg`} />
-                            }
-    
-                        </MapInteractionCSS>
+                        <div className='map-container'>
+                            <MapInteractionCSS
+                                value={this.state.value}
+                                onChange={(value) => this.setState({ value })}
+                                showControls={true}
+                            >
+                                {/* {img === 'birchin-lane' && <Image src={`./images/${img}.png`} />}
+                                {img === 'cheapeside-market' && <Image src={`./images/${img}.png`} />}
+                                {img === 'fleete-street' && <Image src={`./images/${img}.png`} />}
+                                {img === 'fleete-prison' && <Image src={`./images/${img}.png`} />}
+                                {img === 'temple-bar' && <Image src={`./images/${img}.png`} />} */}
+                                { !checkImages.includes(img) 
+                                    ?  <Image src={img} />
+                                    :  <Image src={`./images/${img}.jpg`} />
+                                }
+        
+                            </MapInteractionCSS>
+                        </div>
                     </Col>
                     <Col md="auto" className='col-sm-5 offset-sm-7 two'>
-                        <Poem/>
+                        <Poem 
+                            handleChangeLocationOnWordClick={this.handleChangeLocationOnWordClick}
+                        />
                     </Col>
                 </Row>
+                <Footer/>
             </Container>
         )
     }

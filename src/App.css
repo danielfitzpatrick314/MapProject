@@ -26,9 +26,21 @@ html, body{
 mark { 
   background-color: aqua;
   color: black;
+  cursor: pointer;
 }
 
 .highlight {
-  background-color: blue;
+  background-color: #D2B48C;
   color:aliceblue;
+}
+
+.btn-primary {
+  background-color: #D2B48C !important;
+  border-color: black !important;
+  margin: 2px;
+}
+
+.map-container {
+  /* background-color: red; */
+  height: 70vh;
 }
