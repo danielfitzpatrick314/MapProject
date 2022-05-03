@@ -4,7 +4,7 @@ export const Poem = (props) => (
     <Fragment>
         
         <h1 className='p-heading'>Wyll and Testament</h1>
-        <span className='p-c-txt'>By Isabella Whitney</span><br /><br/>
+        <span className='p-c-txt'>By <a href="https://www.wemmol.com/biography-1">Isabella Whitney</a></span><br /><br/>
         <div class="o-poem isActive" data-view="PoemView">
             <div className="p-line"
 > The time is come I must departe<br/>

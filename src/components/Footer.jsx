@@ -12,10 +12,23 @@ class Footer extends Component{
     render(){
         return (
             <Container className='p-footer'>
-                <Modal show={this.state.show} onHide={() => this.setState({ show :false })}>
+                <Modal 
+                    show={this.state.show} 
+                    onHide={() => this.setState({ show :false })}
+                    size="lg"
+                    centered
+                    aria-labelledby="contained-modal-title-vcenter"
+                >
                     <Modal.Header closeButton>
+                        <Modal.Title>
+                            Works Cited
+                        </Modal.Title>
                     </Modal.Header>
-                    <Modal.Body><p>Whitney, Isabella. "Will and Treatment by Isabella Whitney." <i>Poetry Foundation</i>, Poetry Foundation, 2022, <a href="https://www.poetryfoundation.org/poems/45991/will-and-testament">https://www.poetryfoundation.org/poems/45991/will-and-testament</a></p> </Modal.Body>
+                    <Modal.Body>
+                        <p>Whitney, Isabella. "Will and Treatment by Isabella Whitney." <i>Poetry Foundation</i>, Poetry Foundation, 2022, <a href="https://www.poetryfoundation.org/poems/45991/will-and-testament">https://www.poetryfoundation.org/poems/45991/will-and-testament</a></p> 
+                        <p>Jenstad, Janelle. “The Agas Map.” <span className='txt-italic'>The Map of Early Modern London</span>, Edition 6.6, edited by Janelle Jenstad, U of Victoria, 30 Jun. 2021, <a href='https://mapoflondon.uvic.ca/edition/6.6/map.htm'> mapoflondon.uvic.ca/edition/6.6/map.htm</a>.</p>
+                        <p>Wisnicki, Adrian S., with Heather F. Ball, Jared McDonald, and Mary Borgo Ton. Introduction. <span className='txt-italic'>One More Voice</span> (an imprint of <span className='txt-italic'>Livingstone Online</span>), new dawn edition, 2021, <a href='https://onemorevoice.org'>https://onemorevoice.org</a>.</p>
+                    </Modal.Body>
                 </Modal>
                 <Row>
                     <Col sm={4}>
@@ -27,8 +40,7 @@ class Footer extends Component{
                         <p>Advisor: Dr. Margaret Simon</p>
                     </Col>
                     <Col sm={4}>
-                        <p>Learn More:</p>
-                        <p className='p-shade-txt'><u>MoEML<br/>The Women Writers Project</u></p>
+                        <p className='p-anchor'><a href="https://www.wemmol.com/">Learn More</a></p>
                         <Button variant="primary" onClick={() => this.setState({ show: true })}>Works Cited</Button>
                     </Col>
                 </Row>

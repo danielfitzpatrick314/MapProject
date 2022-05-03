@@ -79,3 +79,16 @@ mark {
  .p-shade-txt {
    color: #aaa;
  }
+
+ .p-anchor {
+   cursor: pointer;
+ }
+
+ .txt-italic {
+   font-style: italic;
+ }
+
+ .txt-center {
+    align-content: center;
+    
+ }
